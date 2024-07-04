@@ -8,7 +8,7 @@ namespace cGuambaS6.Views;
 
 public partial class vEstudiante : ContentPage
 {
-	private const string urlWS = "http://192.168.17.20/semana6/estudiantews.php";
+	private const string urlWS = "http://192.168.0.12/wsestudiantes/estudiantews.php";
 	private readonly HttpClient cliente = new HttpClient();
 	private ObservableCollection<Estudiante> estudiantes;
 
