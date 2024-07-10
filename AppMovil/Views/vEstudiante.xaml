@@ -27,7 +27,7 @@
             <Label Text="Edad" Grid.Row="0" Grid.Column="3" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
         </Grid>
 
-        <ListView x:Name="lvEstudiantes">
+        <ListView x:Name="lvEstudiantes" ItemSelected="lvEstudiantes_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -49,8 +49,11 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-
         </ListView>
+
+        <Button x:Name="btnAgregar"
+                Text="Agregar estudiante"
+                Clicked="btnAgregar_Clicked"/>
 
     </VerticalStackLayout>
 

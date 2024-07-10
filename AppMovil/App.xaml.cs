@@ -5,8 +5,7 @@
         public App()
         {
             InitializeComponent();
-
-            MainPage = new Views.vEstudiante();
+            MainPage = new NavigationPage(new Views.vEstudiante());
         }
     }
 }

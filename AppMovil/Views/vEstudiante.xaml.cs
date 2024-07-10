@@ -8,7 +8,7 @@ namespace cGuambaS6.Views;
 
 public partial class vEstudiante : ContentPage
 {
-	private const string urlWS = "http://192.168.0.12/wsestudiantes/estudiantews.php";
+	private const string urlWS = "http://127.0.0.1/wsestudiantes/estudiantews.php";
 	private readonly HttpClient cliente = new HttpClient();
 	private ObservableCollection<Estudiante> estudiantes;
 
@@ -25,5 +25,16 @@ public partial class vEstudiante : ContentPage
 		estudiantes = new ObservableCollection<Estudiante>(listaEstudiantes);
         lvEstudiantes.ItemsSource = estudiantes;
 
+    }
+
+    private void btnAgregar_Clicked(object sender, EventArgs e)
+    {
+		Navigation.PushAsync(new vAgregar());
+    }
+
+    private void lvEstudiantes_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+        var objEstudiante = (Estudiante) e.SelectedItem;
+        Navigation.PushAsync(new vActualizarEliminar(objEstudiante));
     }
 }
